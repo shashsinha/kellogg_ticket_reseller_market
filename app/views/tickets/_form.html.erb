@@ -42,7 +42,7 @@
 
     <%= f.label :sold_by_id %>
     <!-- Input for sold_by_id start -->
-    <%= f.number_field :sold_by_id, class: sold_by_class, placeholder: "Enter sold by" %>
+    <%= f.collection_select :sold_by_id, User.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for sold_by_id end -->
     <% if sold_by_was_invalid %>
       <% ticket.errors.full_messages_for(:sold_by).each do |message| %>
