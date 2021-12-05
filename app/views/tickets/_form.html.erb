@@ -1,0 +1,187 @@
+<% was_validated = ticket.errors.any? %>
+
+<%= form_with(model: ticket, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for event_id start -->
+  <div class="form-group">
+    <% event_class = "form-control" %>
+    <% event_was_invalid = ticket.errors.include?(:event) %>
+
+    <% if was_validated %>
+      <% if event_was_invalid %>
+        <% event_class << " is-invalid" %>
+      <% else %>
+        <% event_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :event_id %>
+    <!-- Input for event_id start -->
+    <%= f.number_field :event_id, class: event_class, placeholder: "Enter event" %>
+    <!-- Input for event_id end -->
+    <% if event_was_invalid %>
+      <% ticket.errors.full_messages_for(:event).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for event_id end -->
+  <!-- Label and input for sold_by_id start -->
+  <div class="form-group">
+    <% sold_by_class = "form-control" %>
+    <% sold_by_was_invalid = ticket.errors.include?(:sold_by) %>
+
+    <% if was_validated %>
+      <% if sold_by_was_invalid %>
+        <% sold_by_class << " is-invalid" %>
+      <% else %>
+        <% sold_by_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :sold_by_id %>
+    <!-- Input for sold_by_id start -->
+    <%= f.number_field :sold_by_id, class: sold_by_class, placeholder: "Enter sold by" %>
+    <!-- Input for sold_by_id end -->
+    <% if sold_by_was_invalid %>
+      <% ticket.errors.full_messages_for(:sold_by).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for sold_by_id end -->
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <% price_class = "form-control" %>
+    <% price_was_invalid = ticket.errors.include?(:price) %>
+
+    <% if was_validated %>
+      <% if price_was_invalid %>
+        <% price_class << " is-invalid" %>
+      <% else %>
+        <% price_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :price %>
+    <!-- Input for price start -->
+    <%= f.number_field :price, class: price_class, placeholder: "Enter price" %>
+    <!-- Input for price end -->
+    <% if price_was_invalid %>
+      <% ticket.errors.full_messages_for(:price).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for price end -->
+  <!-- Label and input for end_bid_time start -->
+  <div class="form-group">
+    <% end_bid_time_class = "form-control" %>
+    <% end_bid_time_was_invalid = ticket.errors.include?(:end_bid_time) %>
+
+    <% if was_validated %>
+      <% if end_bid_time_was_invalid %>
+        <% end_bid_time_class << " is-invalid" %>
+      <% else %>
+        <% end_bid_time_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :end_bid_time %>
+    <!-- Input for end_bid_time start -->
+    <%= f.datetime_select :end_bid_time, class: end_bid_time_class, placeholder: "Enter end bid time" %>
+    <!-- Input for end_bid_time end -->
+    <% if end_bid_time_was_invalid %>
+      <% ticket.errors.full_messages_for(:end_bid_time).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for end_bid_time end -->
+  <!-- Label and input for starting_bid start -->
+  <div class="form-group">
+    <% starting_bid_class = "form-control" %>
+    <% starting_bid_was_invalid = ticket.errors.include?(:starting_bid) %>
+
+    <% if was_validated %>
+      <% if starting_bid_was_invalid %>
+        <% starting_bid_class << " is-invalid" %>
+      <% else %>
+        <% starting_bid_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :starting_bid %>
+    <!-- Input for starting_bid start -->
+    <%= f.number_field :starting_bid, class: starting_bid_class, placeholder: "Enter starting bid" %>
+    <!-- Input for starting_bid end -->
+    <% if starting_bid_was_invalid %>
+      <% ticket.errors.full_messages_for(:starting_bid).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for starting_bid end -->
+  <!-- Label and input for target_bid start -->
+  <div class="form-group">
+    <% target_bid_class = "form-control" %>
+    <% target_bid_was_invalid = ticket.errors.include?(:target_bid) %>
+
+    <% if was_validated %>
+      <% if target_bid_was_invalid %>
+        <% target_bid_class << " is-invalid" %>
+      <% else %>
+        <% target_bid_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :target_bid %>
+    <!-- Input for target_bid start -->
+    <%= f.number_field :target_bid, class: target_bid_class, placeholder: "Enter target bid" %>
+    <!-- Input for target_bid end -->
+    <% if target_bid_was_invalid %>
+      <% ticket.errors.full_messages_for(:target_bid).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for target_bid end -->
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <% description_class = "form-control" %>
+    <% description_was_invalid = ticket.errors.include?(:description) %>
+
+    <% if was_validated %>
+      <% if description_was_invalid %>
+        <% description_class << " is-invalid" %>
+      <% else %>
+        <% description_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :description %>
+    <!-- Input for description start -->
+    <%= f.text_area :description, class: description_class, placeholder: "Enter description" %>
+    <!-- Input for description end -->
+    <% if description_was_invalid %>
+      <% ticket.errors.full_messages_for(:description).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for description end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
