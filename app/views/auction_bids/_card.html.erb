@@ -6,22 +6,18 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Ticket</dt>
-      <!-- Display ticket_id start -->
       <dd>
         <% if @auction_bid.ticket.present? %>
           <%= link_to auction_bid.ticket, auction_bid.ticket %>
         <% end %>
       </dd>
-      <!-- Display ticket_id end -->
 
       <dt>Bid by</dt>
-      <!-- Display bid_by_id start -->
       <dd>
         <% if @auction_bid.bid_by.present? %>
           <%= link_to auction_bid.bid_by, auction_bid.bid_by %>
         <% end %>
       </dd>
-      <!-- Display bid_by_id end -->
 
     </dl>
 
@@ -30,21 +26,17 @@
         <%= link_to_show_or_back auction_bid, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link auction_bid start -->
       <div class="col">
         <%= link_to edit_auction_bid_url(auction_bid), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link auction_bid end -->
 
-      <!-- Delete link auction_bid start -->
       <div class="col">
         <%= link_to auction_bid, method: :delete, data: { confirm: "Do you really want to delete this auction_bid?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link auction_bid end -->
     </div>
   </div>
 

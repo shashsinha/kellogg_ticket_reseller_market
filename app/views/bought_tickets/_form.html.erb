@@ -1,7 +1,6 @@
 <% was_validated = bought_ticket.errors.any? %>
 
 <%= form_with(model: bought_ticket, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for ticket_bought_id start -->
   <div class="form-group">
     <% ticket_bought_class = "form-control" %>
     <% ticket_bought_was_invalid = bought_ticket.errors.include?(:ticket_bought) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :ticket_bought_id %>
-    <!-- Input for ticket_bought_id start -->
     <%= f.collection_select :ticket_bought_id, Ticket.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for ticket_bought_id end -->
     <% if ticket_bought_was_invalid %>
       <% bought_ticket.errors.full_messages_for(:ticket_bought).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for ticket_bought_id end -->
-  <!-- Label and input for bought_by_id start -->
   <div class="form-group">
     <% bought_by_class = "form-control" %>
     <% bought_by_was_invalid = bought_ticket.errors.include?(:bought_by) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :bought_by_id %>
-    <!-- Input for bought_by_id start -->
     <%= f.collection_select :bought_by_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for bought_by_id end -->
     <% if bought_by_was_invalid %>
       <% bought_ticket.errors.full_messages_for(:bought_by).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,6 +45,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for bought_by_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

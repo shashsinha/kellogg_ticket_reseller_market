@@ -1,7 +1,6 @@
 <% was_validated = auction_bid.errors.any? %>
 
 <%= form_with(model: auction_bid, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for ticket_id start -->
   <div class="form-group">
     <% ticket_class = "form-control" %>
     <% ticket_was_invalid = auction_bid.errors.include?(:ticket) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :ticket_id %>
-    <!-- Input for ticket_id start -->
     <%= f.collection_select :ticket_id, Ticket.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for ticket_id end -->
     <% if ticket_was_invalid %>
       <% auction_bid.errors.full_messages_for(:ticket).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for ticket_id end -->
-  <!-- Label and input for bid_by_id start -->
   <div class="form-group">
     <% bid_by_class = "form-control" %>
     <% bid_by_was_invalid = auction_bid.errors.include?(:bid_by) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :bid_by_id %>
-    <!-- Input for bid_by_id start -->
     <%= f.collection_select :bid_by_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for bid_by_id end -->
     <% if bid_by_was_invalid %>
       <% auction_bid.errors.full_messages_for(:bid_by).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,6 +45,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for bid_by_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

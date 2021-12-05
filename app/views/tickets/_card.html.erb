@@ -6,47 +6,33 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Event</dt>
-      <!-- Display event_id start -->
       <dd>
         <% if @ticket.event.present? %>
           <%= link_to ticket.event, ticket.event %>
         <% end %>
       </dd>
-      <!-- Display event_id end -->
 
       <dt>Sold by</dt>
-      <!-- Display sold_by_id start -->
       <dd>
         <% if @ticket.sold_by.present? %>
           <%= link_to ticket.sold_by, ticket.sold_by %>
         <% end %>
       </dd>
-      <!-- Display sold_by_id end -->
 
       <dt>Price</dt>
-      <!-- Display price start -->
       <dd><%= ticket.price %></dd>
-      <!-- Display price end -->
 
       <dt>End bid time</dt>
-      <!-- Display end_bid_time start -->
       <dd><%= ticket.end_bid_time %></dd>
-      <!-- Display end_bid_time end -->
 
       <dt>Starting bid</dt>
-      <!-- Display starting_bid start -->
       <dd><%= ticket.starting_bid %></dd>
-      <!-- Display starting_bid end -->
 
       <dt>Target bid</dt>
-      <!-- Display target_bid start -->
       <dd><%= ticket.target_bid %></dd>
-      <!-- Display target_bid end -->
 
       <dt>Description</dt>
-      <!-- Display description start -->
       <dd><%= ticket.description %></dd>
-      <!-- Display description end -->
 
     </dl>
 
@@ -55,21 +41,17 @@
         <%= link_to_show_or_back ticket, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link ticket start -->
       <div class="col">
         <%= link_to edit_ticket_url(ticket), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link ticket end -->
 
-      <!-- Delete link ticket start -->
       <div class="col">
         <%= link_to ticket, method: :delete, data: { confirm: "Do you really want to delete this ticket?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link ticket end -->
     </div>
   </div>
 

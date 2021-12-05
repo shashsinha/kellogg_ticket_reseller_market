@@ -7,9 +7,7 @@
 
       <div class="card-body">
         <% was_validated = resource.errors.any? %>
-        <!-- Form html options start -->
         <% form_html_options = { novalidate: true, class: "mb-3" } %>
-        <!-- Form html options end -->
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: form_html_options) do |f| %>
 
           <div class="form-group">
@@ -91,7 +89,6 @@
           </div>
 
 
-          <!-- Devise Input for first_name start -->
           <div class="form-group">
             <% first_name_was_invalid = resource.errors.include?(:first_name) %>
 
@@ -117,9 +114,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for first_name end -->
 
-          <!-- Devise Input for last_name start -->
           <div class="form-group">
             <% last_name_was_invalid = resource.errors.include?(:last_name) %>
 
@@ -145,9 +140,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for last_name end -->
 
-          <!-- Devise Input for email_address start -->
           <div class="form-group">
             <% email_address_was_invalid = resource.errors.include?(:email_address) %>
 
@@ -173,9 +166,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for email_address end -->
 
-          <!-- Devise Input for credit_card_number start -->
           <div class="form-group">
             <% credit_card_number_was_invalid = resource.errors.include?(:credit_card_number) %>
 
@@ -201,9 +192,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for credit_card_number end -->
 
-          <!-- Devise Input for credit_card_zip_code start -->
           <div class="form-group">
             <% credit_card_zip_code_was_invalid = resource.errors.include?(:credit_card_zip_code) %>
 
@@ -229,9 +218,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for credit_card_zip_code end -->
 
-          <!-- Devise Input for credit_card_expiration start -->
           <div class="form-group">
             <% credit_card_expiration_was_invalid = resource.errors.include?(:credit_card_expiration) %>
 
@@ -257,7 +244,6 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for credit_card_expiration end -->
           <%= f.button class: "btn btn-outline-primary btn-block" %>
 
           <hr>

@@ -1,7 +1,6 @@
 <% was_validated = user.errors.any? %>
 
 <%= form_with(model: user, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for first_name start -->
   <div class="form-group">
     <% first_name_class = "form-control" %>
     <% first_name_was_invalid = user.errors.include?(:first_name) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :first_name %>
-    <!-- Input for first_name start -->
     <%= f.text_field :first_name, class: first_name_class, placeholder: "Enter first name" %>
-    <!-- Input for first_name end -->
     <% if first_name_was_invalid %>
       <% user.errors.full_messages_for(:first_name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for first_name end -->
-  <!-- Label and input for last_name start -->
   <div class="form-group">
     <% last_name_class = "form-control" %>
     <% last_name_was_invalid = user.errors.include?(:last_name) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :last_name %>
-    <!-- Input for last_name start -->
     <%= f.text_field :last_name, class: last_name_class, placeholder: "Enter last name" %>
-    <!-- Input for last_name end -->
     <% if last_name_was_invalid %>
       <% user.errors.full_messages_for(:last_name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for last_name end -->
-  <!-- Label and input for email_address start -->
   <div class="form-group">
     <% email_address_class = "form-control" %>
     <% email_address_was_invalid = user.errors.include?(:email_address) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :email_address %>
-    <!-- Input for email_address start -->
     <%= f.text_field :email_address, class: email_address_class, placeholder: "Enter email address" %>
-    <!-- Input for email_address end -->
     <% if email_address_was_invalid %>
       <% user.errors.full_messages_for(:email_address).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for email_address end -->
-  <!-- Label and input for credit_card_number start -->
   <div class="form-group">
     <% credit_card_number_class = "form-control" %>
     <% credit_card_number_was_invalid = user.errors.include?(:credit_card_number) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :credit_card_number %>
-    <!-- Input for credit_card_number start -->
     <%= f.number_field :credit_card_number, class: credit_card_number_class, placeholder: "Enter credit card number" %>
-    <!-- Input for credit_card_number end -->
     <% if credit_card_number_was_invalid %>
       <% user.errors.full_messages_for(:credit_card_number).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,8 +89,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for credit_card_number end -->
-  <!-- Label and input for credit_card_zip_code start -->
   <div class="form-group">
     <% credit_card_zip_code_class = "form-control" %>
     <% credit_card_zip_code_was_invalid = user.errors.include?(:credit_card_zip_code) %>
@@ -119,9 +102,7 @@
     <% end %>
 
     <%= f.label :credit_card_zip_code %>
-    <!-- Input for credit_card_zip_code start -->
     <%= f.number_field :credit_card_zip_code, class: credit_card_zip_code_class, placeholder: "Enter credit card zip code" %>
-    <!-- Input for credit_card_zip_code end -->
     <% if credit_card_zip_code_was_invalid %>
       <% user.errors.full_messages_for(:credit_card_zip_code).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -130,8 +111,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for credit_card_zip_code end -->
-  <!-- Label and input for credit_card_expiration start -->
   <div class="form-group">
     <% credit_card_expiration_class = "form-control" %>
     <% credit_card_expiration_was_invalid = user.errors.include?(:credit_card_expiration) %>
@@ -145,9 +124,7 @@
     <% end %>
 
     <%= f.label :credit_card_expiration %>
-    <!-- Input for credit_card_expiration start -->
     <%= f.date_select :credit_card_expiration, class: credit_card_expiration_class, placeholder: "Enter credit card expiration" %>
-    <!-- Input for credit_card_expiration end -->
     <% if credit_card_expiration_was_invalid %>
       <% user.errors.full_messages_for(:credit_card_expiration).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -156,6 +133,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for credit_card_expiration end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

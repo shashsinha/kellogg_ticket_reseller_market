@@ -1,7 +1,6 @@
 <% was_validated = event.errors.any? %>
 
 <%= form_with(model: event, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for time_of_event start -->
   <div class="form-group">
     <% time_of_event_class = "form-control" %>
     <% time_of_event_was_invalid = event.errors.include?(:time_of_event) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :time_of_event %>
-    <!-- Input for time_of_event start -->
     <%= f.datetime_select :time_of_event, class: time_of_event_class, placeholder: "Enter time of event" %>
-    <!-- Input for time_of_event end -->
     <% if time_of_event_was_invalid %>
       <% event.errors.full_messages_for(:time_of_event).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for time_of_event end -->
-  <!-- Label and input for created_by_id start -->
   <div class="form-group">
     <% created_by_class = "form-control" %>
     <% created_by_was_invalid = event.errors.include?(:created_by) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :created_by_id %>
-    <!-- Input for created_by_id start -->
     <%= f.collection_select :created_by_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for created_by_id end -->
     <% if created_by_was_invalid %>
       <% event.errors.full_messages_for(:created_by).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for created_by_id end -->
-  <!-- Label and input for event_location start -->
   <div class="form-group">
     <% event_location_class = "form-control" %>
     <% event_location_was_invalid = event.errors.include?(:event_location) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :event_location %>
-    <!-- Input for event_location start -->
     <%= f.text_field :event_location, class: event_location_class, placeholder: "Enter event location" %>
-    <!-- Input for event_location end -->
     <% if event_location_was_invalid %>
       <% event.errors.full_messages_for(:event_location).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for event_location end -->
-  <!-- Label and input for description start -->
   <div class="form-group">
     <% description_class = "form-control" %>
     <% description_was_invalid = event.errors.include?(:description) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :description %>
-    <!-- Input for description start -->
     <%= f.text_area :description, class: description_class, placeholder: "Enter description" %>
-    <!-- Input for description end -->
     <% if description_was_invalid %>
       <% event.errors.full_messages_for(:description).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,8 +89,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for description end -->
-  <!-- Label and input for event_category_id start -->
   <div class="form-group">
     <% event_category_class = "form-control" %>
     <% event_category_was_invalid = event.errors.include?(:event_category) %>
@@ -119,9 +102,7 @@
     <% end %>
 
     <%= f.label :event_category_id %>
-    <!-- Input for event_category_id start -->
     <%= f.collection_select :event_category_id, EventCategory.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for event_category_id end -->
     <% if event_category_was_invalid %>
       <% event.errors.full_messages_for(:event_category).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -130,6 +111,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for event_category_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

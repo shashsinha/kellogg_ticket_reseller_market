@@ -10,24 +10,18 @@
   <ul class="list-group list-group-flush">
     <% @ticket.auction_bids.each do |auction_bid| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <%= link_to auction_bid, auction_bid %>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%= link_to auction_bid, method: :delete, data: { confirm: "Do you really want to delete this auction_bid" } do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="ticket_auction_bids_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "tickets/ticket_auction_bids_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

@@ -1,22 +1,12 @@
-<!-- Form bought_ticket start -->
 <%= form_with(model: @bought_ticket, local: true) do |f| %>
-<!-- Form bought_ticket end -->
 
-  <!-- Label and input for ticket_bought_id start -->
   <div class="form-group">
     <%= f.label :ticket_bought_id %>
 
-    <!-- Input for ticket_bought_id start -->
     <%= f.collection_select :ticket_bought_id, Ticket.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for ticket_bought_id end -->
   </div>
-  <!-- Label and input for ticket_bought_id end -->
 
-  <!-- Label and input for bought_by_id start -->
-  <!-- Input for bought_by_id start -->
   <%= f.hidden_field :bought_by_id, value: @user.id %>
-  <!-- Input for bought_by_id end -->
-  <!-- Label and input for bought_by_id end -->
 
   <%= f.submit "Create bought ticket", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

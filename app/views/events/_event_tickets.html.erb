@@ -10,24 +10,18 @@
   <ul class="list-group list-group-flush">
     <% @event.tickets.each do |ticket| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <%= link_to ticket, ticket %>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%= link_to ticket, method: :delete, data: { confirm: "Do you really want to delete this ticket" } do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="event_tickets_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "events/event_tickets_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 
