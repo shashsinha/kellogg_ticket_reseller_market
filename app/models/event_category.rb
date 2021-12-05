@@ -1,6 +1,9 @@
 class EventCategory < ApplicationRecord
   # Direct associations
 
+  has_many   :events,
+             :dependent => :nullify
+
   # Indirect associations
 
   # Validations

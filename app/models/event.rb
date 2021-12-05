@@ -1,6 +1,9 @@
 class Event < ApplicationRecord
   # Direct associations
 
+  belongs_to :event_category,
+             :counter_cache => true
+
   has_many   :tickets,
              :dependent => :destroy
 
