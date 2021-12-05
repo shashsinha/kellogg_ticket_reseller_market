@@ -8,6 +8,7 @@ class EventCategoriesController < ApplicationController
 
   # GET /event_categories/1
   def show
+    @event = Event.new
   end
 
   # GET /event_categories/new

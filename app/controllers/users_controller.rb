@@ -8,6 +8,10 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @auction_bid = AuctionBid.new
+    @bought_ticket = BoughtTicket.new
+    @event = Event.new
+    @ticket = Ticket.new
   end
 
   # GET /users/new

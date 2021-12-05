@@ -1,0 +1,70 @@
+<!-- Form ticket start -->
+<%= form_with(model: @ticket, local: true) do |f| %>
+<!-- Form ticket end -->
+
+  <!-- Label and input for event_id start -->
+  <!-- Input for event_id start -->
+  <%= f.hidden_field :event_id, value: @event.id %>
+  <!-- Input for event_id end -->
+  <!-- Label and input for event_id end -->
+
+  <!-- Label and input for sold_by_id start -->
+  <div class="form-group">
+    <%= f.label :sold_by_id %>
+
+    <!-- Input for sold_by_id start -->
+    <%= f.text_field :sold_by_id, class: "form-control" %>
+    <!-- Input for sold_by_id end -->
+  </div>
+  <!-- Label and input for sold_by_id end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <%= f.label :price %>
+
+    <!-- Input for price start -->
+    <%= f.text_field :price, class: "form-control" %>
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <!-- Label and input for end_bid_time start -->
+  <div class="form-group">
+    <%= f.label :end_bid_time %>
+    <!-- Input for end_bid_time start -->
+    <%= f.datetime_select :end_bid_time, class: "form-control" %>
+    <!-- Input for end_bid_time end -->
+  </div>
+  <!-- Label and input for end_bid_time end -->
+
+  <!-- Label and input for starting_bid start -->
+  <div class="form-group">
+    <%= f.label :starting_bid %>
+
+    <!-- Input for starting_bid start -->
+    <%= f.text_field :starting_bid, class: "form-control" %>
+    <!-- Input for starting_bid end -->
+  </div>
+  <!-- Label and input for starting_bid end -->
+
+  <!-- Label and input for target_bid start -->
+  <div class="form-group">
+    <%= f.label :target_bid %>
+
+    <!-- Input for target_bid start -->
+    <%= f.text_field :target_bid, class: "form-control" %>
+    <!-- Input for target_bid end -->
+  </div>
+  <!-- Label and input for target_bid end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <%= f.label :description %>
+    <!-- Input for description start -->
+    <%= f.text_area :description, rows: "3", class: "form-control" %>
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <%= f.submit "Create ticket", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

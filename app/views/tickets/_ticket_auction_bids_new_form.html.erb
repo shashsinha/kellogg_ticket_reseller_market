@@ -1,0 +1,22 @@
+<!-- Form auction_bid start -->
+<%= form_with(model: @auction_bid, local: true) do |f| %>
+<!-- Form auction_bid end -->
+
+  <!-- Label and input for ticket_id start -->
+  <!-- Input for ticket_id start -->
+  <%= f.hidden_field :ticket_id, value: @ticket.id %>
+  <!-- Input for ticket_id end -->
+  <!-- Label and input for ticket_id end -->
+
+  <!-- Label and input for bid_by_id start -->
+  <div class="form-group">
+    <%= f.label :bid_by_id %>
+
+    <!-- Input for bid_by_id start -->
+    <%= f.text_field :bid_by_id, class: "form-control" %>
+    <!-- Input for bid_by_id end -->
+  </div>
+  <!-- Label and input for bid_by_id end -->
+
+  <%= f.submit "Create auction bid", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

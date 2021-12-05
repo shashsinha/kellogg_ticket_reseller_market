@@ -1,0 +1,22 @@
+<!-- Form bought_ticket start -->
+<%= form_with(model: @bought_ticket, local: true) do |f| %>
+<!-- Form bought_ticket end -->
+
+  <!-- Label and input for ticket_bought_id start -->
+  <!-- Input for ticket_bought_id start -->
+  <%= f.hidden_field :ticket_bought_id, value: @ticket.id %>
+  <!-- Input for ticket_bought_id end -->
+  <!-- Label and input for ticket_bought_id end -->
+
+  <!-- Label and input for bought_by_id start -->
+  <div class="form-group">
+    <%= f.label :bought_by_id %>
+
+    <!-- Input for bought_by_id start -->
+    <%= f.text_field :bought_by_id, class: "form-control" %>
+    <!-- Input for bought_by_id end -->
+  </div>
+  <!-- Label and input for bought_by_id end -->
+
+  <%= f.submit "Create bought ticket", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

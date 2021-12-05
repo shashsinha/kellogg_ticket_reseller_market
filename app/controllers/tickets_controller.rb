@@ -8,6 +8,8 @@ class TicketsController < ApplicationController
 
   # GET /tickets/1
   def show
+    @auction_bid = AuctionBid.new
+    @bought_ticket = BoughtTicket.new
   end
 
   # GET /tickets/new
@@ -24,7 +26,12 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
 
     if @ticket.save
-      redirect_to @ticket, notice: 'Ticket was successfully created.'
+      message = 'Ticket was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @ticket, notice: message
+      end
     else
       render :new
     end

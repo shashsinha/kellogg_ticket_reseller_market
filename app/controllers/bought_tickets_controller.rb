@@ -24,7 +24,12 @@ class BoughtTicketsController < ApplicationController
     @bought_ticket = BoughtTicket.new(bought_ticket_params)
 
     if @bought_ticket.save
-      redirect_to @bought_ticket, notice: 'Bought ticket was successfully created.'
+      message = 'BoughtTicket was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @bought_ticket, notice: message
+      end
     else
       render :new
     end
