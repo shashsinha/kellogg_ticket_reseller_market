@@ -10,6 +10,9 @@ class EventResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :created_by,
+             resource: UserResource
+
   # Indirect associations
 
 end
