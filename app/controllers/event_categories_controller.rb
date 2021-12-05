@@ -3,7 +3,8 @@ class EventCategoriesController < ApplicationController
 
   # GET /event_categories
   def index
-    @event_categories = EventCategory.page(params[:page]).per(10)
+    @q = EventCategory.ransack(params[:q])
+    @event_categories = @q.result(:distinct => true).includes(:events).page(params[:page]).per(10)
   end
 
   # GET /event_categories/1

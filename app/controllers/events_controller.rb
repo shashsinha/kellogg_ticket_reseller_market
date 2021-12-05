@@ -3,7 +3,8 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
-    @events = Event.page(params[:page]).per(10)
+    @q = Event.ransack(params[:q])
+    @events = @q.result(:distinct => true).includes(:created_by, :tickets, :event_category).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@events.where.not(:event_location_latitude => nil)) do |event, marker|
       marker.lat event.event_location_latitude
       marker.lng event.event_location_longitude

@@ -3,7 +3,8 @@ class AuctionBidsController < ApplicationController
 
   # GET /auction_bids
   def index
-    @auction_bids = AuctionBid.page(params[:page]).per(10)
+    @q = AuctionBid.ransack(params[:q])
+    @auction_bids = @q.result(:distinct => true).includes(:bid_by, :ticket).page(params[:page]).per(10)
   end
 
   # GET /auction_bids/1

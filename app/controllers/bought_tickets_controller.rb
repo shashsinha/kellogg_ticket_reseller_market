@@ -3,7 +3,8 @@ class BoughtTicketsController < ApplicationController
 
   # GET /bought_tickets
   def index
-    @bought_tickets = BoughtTicket.page(params[:page]).per(10)
+    @q = BoughtTicket.ransack(params[:q])
+    @bought_tickets = @q.result(:distinct => true).includes(:bought_by, :ticket_bought).page(params[:page]).per(10)
   end
 
   # GET /bought_tickets/1
