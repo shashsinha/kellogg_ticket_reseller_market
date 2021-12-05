@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :auction_bids
   resources :bought_tickets
   resources :events
   resources :tickets
