@@ -13,5 +13,4 @@ class AuctionBidResource < ApplicationResource
              resource: UserResource
 
   # Indirect associations
-
 end

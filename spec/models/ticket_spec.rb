@@ -1,9 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Ticket, type: :model do
-  
-    describe "Direct Associations" do
-
+  describe "Direct Associations" do
     it { should belong_to(:event) }
 
     it { should have_many(:auction_bids) }
@@ -11,14 +9,11 @@ RSpec.describe Ticket, type: :model do
     it { should have_many(:bought_tickets) }
 
     it { should belong_to(:sold_by) }
+  end
 
-    end
+  describe "InDirect Associations" do
+  end
 
-    describe "InDirect Associations" do
-
-    end
-
-    describe "Validations" do
-
-    end
+  describe "Validations" do
+  end
 end

@@ -13,7 +13,7 @@ class Api::V1::BoughtTicketsController < Api::V1::GraphitiController
     bought_ticket = BoughtTicketResource.build(params)
 
     if bought_ticket.save
-      render jsonapi: bought_ticket, status: 201
+      render jsonapi: bought_ticket, status: :created
     else
       render jsonapi_errors: bought_ticket
     end
@@ -33,7 +33,7 @@ class Api::V1::BoughtTicketsController < Api::V1::GraphitiController
     bought_ticket = BoughtTicketResource.find(params)
 
     if bought_ticket.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: bought_ticket
     end

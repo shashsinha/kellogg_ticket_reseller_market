@@ -13,7 +13,7 @@ class Api::V1::TicketsController < Api::V1::GraphitiController
     ticket = TicketResource.build(params)
 
     if ticket.save
-      render jsonapi: ticket, status: 201
+      render jsonapi: ticket, status: :created
     else
       render jsonapi_errors: ticket
     end
@@ -33,7 +33,7 @@ class Api::V1::TicketsController < Api::V1::GraphitiController
     ticket = TicketResource.find(params)
 
     if ticket.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: ticket
     end

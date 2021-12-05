@@ -18,5 +18,4 @@ class EventResource < ApplicationResource
              resource: UserResource
 
   # Indirect associations
-
 end

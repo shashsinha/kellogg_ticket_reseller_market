@@ -4,14 +4,14 @@ class Ticket < ApplicationRecord
   belongs_to :event
 
   has_many   :auction_bids,
-             :dependent => :destroy
+             dependent: :destroy
 
   has_many   :bought_tickets,
-             :foreign_key => "ticket_bought_id",
-             :dependent => :destroy
+             foreign_key: "ticket_bought_id",
+             dependent: :destroy
 
   belongs_to :sold_by,
-             :class_name => "User"
+             class_name: "User"
 
   # Indirect associations
 
@@ -22,5 +22,4 @@ class Ticket < ApplicationRecord
   def to_s
     event.to_s
   end
-
 end

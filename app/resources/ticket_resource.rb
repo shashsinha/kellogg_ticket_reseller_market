@@ -23,5 +23,4 @@ class TicketResource < ApplicationResource
              resource: UserResource
 
   # Indirect associations
-
 end

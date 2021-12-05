@@ -2,10 +2,10 @@ class BoughtTicket < ApplicationRecord
   # Direct associations
 
   belongs_to :ticket_bought,
-             :class_name => "Ticket"
+             class_name: "Ticket"
 
   belongs_to :bought_by,
-             :class_name => "User"
+             class_name: "User"
 
   # Indirect associations
 
@@ -16,5 +16,4 @@ class BoughtTicket < ApplicationRecord
   def to_s
     ticket_bought.to_s
   end
-
 end

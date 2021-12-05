@@ -13,7 +13,7 @@ class Api::V1::EventCategoriesController < Api::V1::GraphitiController
     event_category = EventCategoryResource.build(params)
 
     if event_category.save
-      render jsonapi: event_category, status: 201
+      render jsonapi: event_category, status: :created
     else
       render jsonapi_errors: event_category
     end
@@ -33,7 +33,7 @@ class Api::V1::EventCategoriesController < Api::V1::GraphitiController
     event_category = EventCategoryResource.find(params)
 
     if event_category.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: event_category
     end

@@ -14,5 +14,4 @@ class BoughtTicketResource < ApplicationResource
              resource: UserResource
 
   # Indirect associations
-
 end

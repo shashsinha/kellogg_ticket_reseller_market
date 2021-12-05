@@ -13,7 +13,7 @@ class Api::V1::AuctionBidsController < Api::V1::GraphitiController
     auction_bid = AuctionBidResource.build(params)
 
     if auction_bid.save
-      render jsonapi: auction_bid, status: 201
+      render jsonapi: auction_bid, status: :created
     else
       render jsonapi_errors: auction_bid
     end
@@ -33,7 +33,7 @@ class Api::V1::AuctionBidsController < Api::V1::GraphitiController
     auction_bid = AuctionBidResource.find(params)
 
     if auction_bid.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: auction_bid
     end

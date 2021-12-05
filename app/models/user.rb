@@ -1,23 +1,22 @@
 class User < ApplicationRecord
-  
   include JwtToken
-# Direct associations
+  # Direct associations
 
   has_many   :auction_bids,
-             :foreign_key => "bid_by_id",
-             :dependent => :destroy
+             foreign_key: "bid_by_id",
+             dependent: :destroy
 
   has_many   :bought_tickets,
-             :foreign_key => "bought_by_id",
-             :dependent => :destroy
+             foreign_key: "bought_by_id",
+             dependent: :destroy
 
   has_many   :events,
-             :foreign_key => "created_by_id",
-             :dependent => :destroy
+             foreign_key: "created_by_id",
+             dependent: :destroy
 
   has_many   :tickets,
-             :foreign_key => "sold_by_id",
-             :dependent => :destroy
+             foreign_key: "sold_by_id",
+             dependent: :destroy
 
   # Indirect associations
 

@@ -2,7 +2,7 @@ class EventCategory < ApplicationRecord
   # Direct associations
 
   has_many   :events,
-             :dependent => :nullify
+             dependent: :nullify
 
   # Indirect associations
 
@@ -13,5 +13,4 @@ class EventCategory < ApplicationRecord
   def to_s
     name
   end
-
 end
