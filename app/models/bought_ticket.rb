@@ -1,6 +1,9 @@
 class BoughtTicket < ApplicationRecord
   # Direct associations
 
+  belongs_to :bought_by,
+             :class_name => "User"
+
   # Indirect associations
 
   # Validations

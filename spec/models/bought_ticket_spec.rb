@@ -4,6 +4,8 @@ RSpec.describe BoughtTicket, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:bought_by) }
+
     end
 
     describe "InDirect Associations" do
