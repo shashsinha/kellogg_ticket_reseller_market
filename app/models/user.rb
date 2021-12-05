@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :tickets,
+             :foreign_key => "sold_by_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
