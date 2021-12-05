@@ -7,6 +7,9 @@ class AuctionBidResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :bid_by,
+             resource: UserResource
+
   # Indirect associations
 
 end
