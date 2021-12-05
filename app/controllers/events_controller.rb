@@ -4,6 +4,11 @@ class EventsController < ApplicationController
   # GET /events
   def index
     @events = Event.all
+    @location_hash = Gmaps4rails.build_markers(@events.where.not(:event_location_latitude => nil)) do |event, marker|
+      marker.lat event.event_location_latitude
+      marker.lng event.event_location_longitude
+      marker.infowindow "<h5><a href='/events/#{event.id}'>#{event.time_of_event}</a></h5><small>#{event.event_location_formatted_address}</small>"
+    end
   end
 
   # GET /events/1

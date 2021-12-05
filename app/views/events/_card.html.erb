@@ -17,7 +17,11 @@
 
       <dt>Event location</dt>
       <!-- Display event_location start -->
-      <dd><%= event.event_location %></dd>
+      <dd>
+        <div>
+          <%= render partial: "events/one_photo_map" %>
+        </div>
+      </dd>
       <!-- Display event_location end -->
 
       <dt>Description</dt>
