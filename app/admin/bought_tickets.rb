@@ -1,5 +1,7 @@
 ActiveAdmin.register BoughtTicket do
 
+ permit_params :ticket_bought_id, :bought_by_id
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
