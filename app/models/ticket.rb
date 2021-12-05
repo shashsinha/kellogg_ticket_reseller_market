@@ -1,6 +1,10 @@
 class Ticket < ApplicationRecord
   # Direct associations
 
+  has_many   :bought_tickets,
+             :foreign_key => "ticket_bought_id",
+             :dependent => :destroy
+
   belongs_to :sold_by,
              :class_name => "User"
 
