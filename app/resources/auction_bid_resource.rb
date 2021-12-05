@@ -7,6 +7,8 @@ class AuctionBidResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :ticket
+
   belongs_to :bid_by,
              resource: UserResource
 

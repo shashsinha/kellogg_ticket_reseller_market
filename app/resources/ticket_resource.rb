@@ -12,6 +12,8 @@ class TicketResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :auction_bids
+
   has_many   :bought_tickets,
              foreign_key: :ticket_bought_id
 
