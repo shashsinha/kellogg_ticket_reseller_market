@@ -7,12 +7,20 @@
     <dl class="mb-1">
       <dt>Ticket</dt>
       <!-- Display ticket_id start -->
-      <dd><%= auction_bid.ticket_id %></dd>
+      <dd>
+        <% if @auction_bid.ticket.present? %>
+          <%= link_to auction_bid.ticket, auction_bid.ticket %>
+        <% end %>
+      </dd>
       <!-- Display ticket_id end -->
 
       <dt>Bid by</dt>
       <!-- Display bid_by_id start -->
-      <dd><%= auction_bid.bid_by_id %></dd>
+      <dd>
+        <% if @auction_bid.bid_by.present? %>
+          <%= link_to auction_bid.bid_by, auction_bid.bid_by %>
+        <% end %>
+      </dd>
       <!-- Display bid_by_id end -->
 
     </dl>

@@ -12,7 +12,11 @@
 
       <dt>Created by</dt>
       <!-- Display created_by_id start -->
-      <dd><%= event.created_by_id %></dd>
+      <dd>
+        <% if @event.created_by.present? %>
+          <%= link_to event.created_by, event.created_by %>
+        <% end %>
+      </dd>
       <!-- Display created_by_id end -->
 
       <dt>Event location</dt>
@@ -31,7 +35,11 @@
 
       <dt>Event category</dt>
       <!-- Display event_category_id start -->
-      <dd><%= event.event_category_id %></dd>
+      <dd>
+        <% if @event.event_category.present? %>
+          <%= link_to event.event_category, event.event_category %>
+        <% end %>
+      </dd>
       <!-- Display event_category_id end -->
 
     </dl>

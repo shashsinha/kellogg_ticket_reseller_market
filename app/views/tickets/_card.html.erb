@@ -7,12 +7,20 @@
     <dl class="mb-1">
       <dt>Event</dt>
       <!-- Display event_id start -->
-      <dd><%= ticket.event_id %></dd>
+      <dd>
+        <% if @ticket.event.present? %>
+          <%= link_to ticket.event, ticket.event %>
+        <% end %>
+      </dd>
       <!-- Display event_id end -->
 
       <dt>Sold by</dt>
       <!-- Display sold_by_id start -->
-      <dd><%= ticket.sold_by_id %></dd>
+      <dd>
+        <% if @ticket.sold_by.present? %>
+          <%= link_to ticket.sold_by, ticket.sold_by %>
+        <% end %>
+      </dd>
       <!-- Display sold_by_id end -->
 
       <dt>Price</dt>
