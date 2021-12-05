@@ -1,0 +1,46 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Bought Ticket #<%= bought_ticket.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Ticket bought</dt>
+      <!-- Display ticket_bought_id start -->
+      <dd><%= bought_ticket.ticket_bought_id %></dd>
+      <!-- Display ticket_bought_id end -->
+
+      <dt>Bought by</dt>
+      <!-- Display bought_by_id start -->
+      <dd><%= bought_ticket.bought_by_id %></dd>
+      <!-- Display bought_by_id end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back bought_ticket, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link bought_ticket start -->
+      <div class="col">
+        <%= link_to edit_bought_ticket_url(bought_ticket), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link bought_ticket end -->
+
+      <!-- Delete link bought_ticket start -->
+      <div class="col">
+        <%= link_to bought_ticket, method: :delete, data: { confirm: "Do you really want to delete this bought_ticket?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link bought_ticket end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(bought_ticket.updated_at) %> ago
+  </div>
+</div>
