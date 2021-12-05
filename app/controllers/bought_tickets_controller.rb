@@ -42,8 +42,14 @@ class BoughtTicketsController < ApplicationController
   # DELETE /bought_tickets/1
   def destroy
     @bought_ticket.destroy
-    redirect_to bought_tickets_url, notice: 'Bought ticket was successfully destroyed.'
+    message = "BoughtTicket was successfully deleted."
+    if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+      redirect_back fallback_location: request.referrer, notice: message
+    else
+      redirect_to bought_tickets_url, notice: message
+    end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
