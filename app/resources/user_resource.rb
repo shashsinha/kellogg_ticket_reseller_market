@@ -12,6 +12,9 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :bought_tickets,
+             foreign_key: :bought_by_id
+
   has_many   :events,
              foreign_key: :created_by_id
 

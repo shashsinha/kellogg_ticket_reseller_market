@@ -7,6 +7,9 @@ class BoughtTicketResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :bought_by,
+             resource: UserResource
+
   # Indirect associations
 
 end
