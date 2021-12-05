@@ -1,6 +1,9 @@
 class Ticket < ApplicationRecord
   # Direct associations
 
+  has_many   :auction_bids,
+             :dependent => :destroy
+
   has_many   :bought_tickets,
              :foreign_key => "ticket_bought_id",
              :dependent => :destroy

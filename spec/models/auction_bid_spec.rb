@@ -4,6 +4,8 @@ RSpec.describe AuctionBid, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:ticket) }
+
     it { should belong_to(:bid_by) }
 
     end
