@@ -13,7 +13,7 @@
     <%= f.label :bid_by_id %>
 
     <!-- Input for bid_by_id start -->
-    <%= f.text_field :bid_by_id, class: "form-control" %>
+    <%= f.collection_select :bid_by_id, User.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for bid_by_id end -->
   </div>
   <!-- Label and input for bid_by_id end -->

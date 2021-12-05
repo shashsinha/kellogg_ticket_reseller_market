@@ -42,7 +42,7 @@
 
     <%= f.label :bid_by_id %>
     <!-- Input for bid_by_id start -->
-    <%= f.number_field :bid_by_id, class: bid_by_class, placeholder: "Enter bid by" %>
+    <%= f.collection_select :bid_by_id, User.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for bid_by_id end -->
     <% if bid_by_was_invalid %>
       <% auction_bid.errors.full_messages_for(:bid_by).each do |message| %>
