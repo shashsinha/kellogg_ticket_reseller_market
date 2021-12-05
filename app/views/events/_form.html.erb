@@ -42,7 +42,7 @@
 
     <%= f.label :created_by_id %>
     <!-- Input for created_by_id start -->
-    <%= f.number_field :created_by_id, class: created_by_class, placeholder: "Enter created by" %>
+    <%= f.collection_select :created_by_id, User.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for created_by_id end -->
     <% if created_by_was_invalid %>
       <% event.errors.full_messages_for(:created_by).each do |message| %>

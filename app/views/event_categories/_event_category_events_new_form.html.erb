@@ -16,7 +16,7 @@
     <%= f.label :created_by_id %>
 
     <!-- Input for created_by_id start -->
-    <%= f.text_field :created_by_id, class: "form-control" %>
+    <%= f.collection_select :created_by_id, User.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for created_by_id end -->
   </div>
   <!-- Label and input for created_by_id end -->
