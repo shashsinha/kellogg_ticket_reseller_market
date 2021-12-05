@@ -3,7 +3,7 @@ class TicketsController < ApplicationController
 
   # GET /tickets
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.page(params[:page]).per(10)
   end
 
   # GET /tickets/1

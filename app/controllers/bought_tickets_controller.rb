@@ -3,7 +3,7 @@ class BoughtTicketsController < ApplicationController
 
   # GET /bought_tickets
   def index
-    @bought_tickets = BoughtTicket.all
+    @bought_tickets = BoughtTicket.page(params[:page]).per(10)
   end
 
   # GET /bought_tickets/1

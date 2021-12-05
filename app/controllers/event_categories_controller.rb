@@ -3,7 +3,7 @@ class EventCategoriesController < ApplicationController
 
   # GET /event_categories
   def index
-    @event_categories = EventCategory.all
+    @event_categories = EventCategory.page(params[:page]).per(10)
   end
 
   # GET /event_categories/1
