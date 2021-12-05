@@ -12,6 +12,8 @@ class TicketResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :event
+
   has_many   :auction_bids
 
   has_many   :bought_tickets,

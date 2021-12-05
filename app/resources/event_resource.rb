@@ -10,6 +10,8 @@ class EventResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :tickets
+
   belongs_to :created_by,
              resource: UserResource
 
