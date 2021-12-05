@@ -7,7 +7,7 @@
     <%= f.label :ticket_id %>
 
     <!-- Input for ticket_id start -->
-    <%= f.text_field :ticket_id, class: "form-control" %>
+    <%= f.collection_select :ticket_id, Ticket.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for ticket_id end -->
   </div>
   <!-- Label and input for ticket_id end -->

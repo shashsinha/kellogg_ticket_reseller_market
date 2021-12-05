@@ -16,7 +16,7 @@
 
     <%= f.label :ticket_id %>
     <!-- Input for ticket_id start -->
-    <%= f.number_field :ticket_id, class: ticket_class, placeholder: "Enter ticket" %>
+    <%= f.collection_select :ticket_id, Ticket.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for ticket_id end -->
     <% if ticket_was_invalid %>
       <% auction_bid.errors.full_messages_for(:ticket).each do |message| %>
