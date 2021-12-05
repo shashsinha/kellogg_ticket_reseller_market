@@ -1,5 +1,7 @@
 ActiveAdmin.register Ticket do
 
+ permit_params :event_id, :sold_by_id, :price, :end_bid_time, :starting_bid, :target_bid, :description
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
