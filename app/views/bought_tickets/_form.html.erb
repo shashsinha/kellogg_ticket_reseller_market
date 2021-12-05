@@ -16,7 +16,7 @@
 
     <%= f.label :ticket_bought_id %>
     <!-- Input for ticket_bought_id start -->
-    <%= f.number_field :ticket_bought_id, class: ticket_bought_class, placeholder: "Enter ticket bought" %>
+    <%= f.collection_select :ticket_bought_id, Ticket.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for ticket_bought_id end -->
     <% if ticket_bought_was_invalid %>
       <% bought_ticket.errors.full_messages_for(:ticket_bought).each do |message| %>
