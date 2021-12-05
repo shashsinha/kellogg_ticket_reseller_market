@@ -1,6 +1,8 @@
 class Ticket < ApplicationRecord
   # Direct associations
 
+  belongs_to :event
+
   has_many   :auction_bids,
              :dependent => :destroy
 

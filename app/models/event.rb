@@ -1,6 +1,9 @@
 class Event < ApplicationRecord
   # Direct associations
 
+  has_many   :tickets,
+             :dependent => :destroy
+
   belongs_to :created_by,
              :class_name => "User"
 
