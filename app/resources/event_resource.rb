@@ -10,6 +10,8 @@ class EventResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :event_category
+
   has_many   :tickets
 
   belongs_to :created_by,
