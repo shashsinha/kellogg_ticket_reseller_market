@@ -12,6 +12,9 @@ class TicketResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :sold_by,
+             resource: UserResource
+
   # Indirect associations
 
 end
