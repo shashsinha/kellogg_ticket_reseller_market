@@ -1,6 +1,9 @@
 class AuctionBid < ApplicationRecord
   # Direct associations
 
+  belongs_to :bid_by,
+             :class_name => "User"
+
   # Indirect associations
 
   # Validations

@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :auction_bids,
+             :foreign_key => "bid_by_id",
+             :dependent => :destroy
+
   has_many   :bought_tickets,
              :foreign_key => "bought_by_id",
              :dependent => :destroy
