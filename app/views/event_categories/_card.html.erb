@@ -1,0 +1,41 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Event Category #<%= event_category.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Name</dt>
+      <!-- Display name start -->
+      <dd><%= event_category.name %></dd>
+      <!-- Display name end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back event_category, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link event_category start -->
+      <div class="col">
+        <%= link_to edit_event_category_url(event_category), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link event_category end -->
+
+      <!-- Delete link event_category start -->
+      <div class="col">
+        <%= link_to event_category, method: :delete, data: { confirm: "Do you really want to delete this event_category?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link event_category end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(event_category.updated_at) %> ago
+  </div>
+</div>
