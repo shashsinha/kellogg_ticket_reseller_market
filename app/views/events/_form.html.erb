@@ -120,7 +120,7 @@
 
     <%= f.label :event_category_id %>
     <!-- Input for event_category_id start -->
-    <%= f.number_field :event_category_id, class: event_category_class, placeholder: "Enter event category" %>
+    <%= f.collection_select :event_category_id, EventCategory.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for event_category_id end -->
     <% if event_category_was_invalid %>
       <% event.errors.full_messages_for(:event_category).each do |message| %>
